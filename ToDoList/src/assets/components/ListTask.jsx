@@ -1,5 +1,5 @@
-import svgCircle from "../images/circle.svg";
-import svgCheckCircle from "../images/check-circle.svg";
+import svgCircle from "../../../src/assets/images/circle.svg";
+import svgCheckCircle from "../../../src/assets/images/check-circle.svg";
 
 function ListTask({ valueSearch, ...props }) {
   return (
