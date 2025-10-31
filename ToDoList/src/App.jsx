@@ -51,7 +51,7 @@ function App() {
     <>
       <div className="navbar">
         <div className="user-perfil">
-          <img src="src\assets\images\user-perfil.png" alt="" />
+          <img src="src/assets/images/user-perfil.png" alt="" />
           <span>Julia</span>
         </div>
         <div className="icons-info">
