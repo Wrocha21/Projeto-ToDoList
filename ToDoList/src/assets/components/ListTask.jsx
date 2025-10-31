@@ -28,7 +28,7 @@ function ListTask({ valueSearch, ...props }) {
                     onClick={() => {
                       props.toggleTask(item.id);
                     }}
-                    src={item.isCompleted ? { svgCheckCircle } : { svgCircle }}
+                    src={item.isCompleted ? svgCheckCircle : svgCircle}
                     width={26}
                     alt=""
                   />
