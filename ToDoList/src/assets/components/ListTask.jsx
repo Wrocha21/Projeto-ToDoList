@@ -1,3 +1,6 @@
+import svgCircle from "../images/circle.svg";
+import svgCheckCircle from "../images/check-circle.svg";
+
 function ListTask({ valueSearch, ...props }) {
   return (
     <>
@@ -25,11 +28,7 @@ function ListTask({ valueSearch, ...props }) {
                     onClick={() => {
                       props.toggleTask(item.id);
                     }}
-                    src={
-                      item.isCompleted
-                        ? "src/assets/images/check-circle.svg"
-                        : "src/assets/images/circle.svg"
-                    }
+                    src={item.isCompleted ? { svgCheckCircle } : { svgCircle }}
                     width={26}
                     alt=""
                   />
