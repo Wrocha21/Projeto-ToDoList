@@ -1,0 +1,74 @@
+.tasks-box {
+  margin: 15px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box-addTask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  input {
+    width: 317px;
+    height: 42px;
+    color: white;
+    padding-left: 12px;
+    background: none;
+    border: 1px solid #cdcdcd;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  svg {
+    cursor: pointer;
+    &:hover {
+      fill: #979797;
+    }
+  }
+}
+
+.box-listTask {
+  margin: 10px;
+  max-height: 420px;
+  span {
+    font-weight: 500;
+    color: white;
+  }
+
+  ul {
+    background-color: #3b3b3b;
+    border-radius: 10px;
+    overflow-y: auto;
+    height: 400px;
+    max-height: 420px;
+    list-style: none;
+    li {
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 440px;
+      height: 61px;
+      border: 1px solid white;
+      border-radius: 10px;
+      margin: 10px;
+      img {
+        margin: 0px 10px 0px 10px;
+        cursor: pointer;
+      }
+      svg {
+        margin-right: 10px;
+        cursor: pointer;
+        &:hover {
+          fill: #cdcdcd;
+        }
+      }
+    }
+  }
+}
+
+.box-verify {
+  display: flex;
+  align-content: center;
+}
