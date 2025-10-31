@@ -10,7 +10,7 @@
   justify-content: space-between;
 
   input {
-    width: 317px;
+    width: 250px;
     height: 42px;
     color: white;
     padding-left: 12px;
@@ -86,4 +86,13 @@
 .box-verify {
   display: flex;
   align-content: center;
+}
+
+.icons-add {
+  display: flex;
+  gap: 14px;
+
+  img {
+    cursor: pointer;
+  }
 }

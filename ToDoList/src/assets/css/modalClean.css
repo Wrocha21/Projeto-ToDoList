@@ -1,0 +1,26 @@
+.box-modalClean {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: #2c2c2c6c;
+}
+.modalClean {
+  width: 254px;
+  display: flex;
+  flex-direction: column;
+  height: 66px;
+  background: linear-gradient(353.79deg, #1c1c1c 7.99%, #797979 252.47%);
+  border-radius: 10px;
+  span {
+    color: white;
+    font-weight: 500;
+    font-size: 11px;
+    text-align: center;
+  }
+}
