@@ -33,6 +33,7 @@ function App() {
     setNextId((prev) => prev + 1);
     setNameTask("");
     setDescTask("");
+    setModal(false);
   }
 
   function deleteTaskOnList(taskID) {
