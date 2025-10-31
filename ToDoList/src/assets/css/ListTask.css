@@ -1,4 +1,4 @@
-.tasks-box {
+.container-searchAndPlus {
   margin: 15px 10px 0px 10px;
   display: flex;
   flex-direction: column;
@@ -43,6 +43,7 @@
     height: 400px;
     max-height: 420px;
     list-style: none;
+
     li {
       color: white;
       display: flex;
@@ -65,6 +66,18 @@
         }
       }
     }
+  }
+}
+
+.title-task {
+  position: relative;
+  .desc {
+    position: absolute;
+    width: 340px;
+    top: 22px;
+    left: 1px;
+    font-size: 10px;
+    color: #979797;
   }
 }
 

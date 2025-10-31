@@ -3,11 +3,14 @@ import { ListTask } from "./assets/components/ListTask";
 import { Modal } from "./assets/components/modal";
 import "../src/assets/css/ListTask.css";
 import "../src/assets/css/global.css";
+import "../src/assets/css/modal.css";
+
 import { useState } from "react";
 
 function App() {
   const [listOfTask, setListOfTask] = useState([]);
   const [nameTask, setNameTask] = useState("");
+  const [descTask, setDescTask] = useState("");
   const [nextId, setNextId] = useState(0);
   const [modal, setModal] = useState(false);
   const [search, setSearch] = useState("");
@@ -20,12 +23,13 @@ function App() {
     const task = {
       nameTask: nameTask,
       id: nextId,
-      desc: "",
+      desc: descTask,
       isCompleted: false,
     };
     setListOfTask((prev) => [...prev, task]);
     setNextId((prev) => prev + 1);
     setNameTask("");
+    setDescTask("");
   }
 
   function deleteTaskOnList(taskID) {
@@ -92,6 +96,8 @@ function App() {
           setNameTask={setNameTask}
           saveTask={addNewTaskOnList}
           nameTaskValue={nameTask}
+          descTask={descTask}
+          setDescTask={setDescTask}
         />
       )}
     </>

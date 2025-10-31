@@ -33,7 +33,13 @@ function ListTask({ valueSearch, ...props }) {
                     width={26}
                     alt=""
                   />
-                  {item.nameTask}
+                  <div
+                    className="title-task"
+                    style={{ top: item.desc.length > 0 ? "-4px" : "" }}
+                  >
+                    {item.nameTask}
+                    <div className="desc">{item.desc}</div>
+                  </div>
                 </div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

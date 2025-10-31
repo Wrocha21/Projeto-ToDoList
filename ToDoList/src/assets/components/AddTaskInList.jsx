@@ -1,7 +1,7 @@
 function AddTaskInList(props) {
   return (
     <>
-      <div className="tasks-box">
+      <div className="container-searchAndPlus">
         <div className="box-addTask">
           <input
             type="text"

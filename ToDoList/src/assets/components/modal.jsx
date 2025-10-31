@@ -24,7 +24,12 @@ export function Modal(props) {
               value={props.nameTaskValue}
               onChange={(e) => props.setNameTask(e.target.value)}
             />
-            <textarea type="text" />
+            <textarea
+              type="text"
+              placeholder="Descrição da sua Tarefa"
+              value={props.descTask}
+              onChange={(e) => props.setDescTask(e.target.value)}
+            />
           </div>
           <div className="addTaskBtn">
             <button
