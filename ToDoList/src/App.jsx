@@ -1,6 +1,9 @@
 import { AddTaskInList } from "./assets/components/AddTaskInList";
 import { ListTask } from "./assets/components/ListTask";
 import { Modal } from "./assets/components/modal";
+
+import userPerfilImg from "./assets/images/user-perfil.png";
+
 import "../src/assets/css/ListTask.css";
 import "../src/assets/css/global.css";
 import "../src/assets/css/modal.css";
@@ -51,7 +54,7 @@ function App() {
     <>
       <div className="navbar">
         <div className="user-perfil">
-          <img src="src/assets/images/user-perfil.png" alt="" />
+          <img src={userPerfilImg} alt="" />
           <span>Julia</span>
         </div>
         <div className="icons-info">
