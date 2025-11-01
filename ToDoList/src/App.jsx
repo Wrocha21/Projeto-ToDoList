@@ -1,7 +1,6 @@
 import { AddTaskInList } from "./assets/components/AddTaskInList";
 import { ListTask } from "./assets/components/ListTask";
 import { Modal } from "./assets/components/Modal";
-import { ModalClean } from "./assets/components/ModalClean";
 import { useState } from "react";
 
 import userPerfilImg from "./assets/images/user-perfil.png";
@@ -10,7 +9,6 @@ import "../src/assets/css/ListTask.css";
 import "../src/assets/css/global.css";
 import "../src/assets/css/modal.css";
 import "../src/assets/css/modalDelTask.css";
-import "../src/assets/css/modalClean.css";
 
 function App() {
   const [listOfTask, setListOfTask] = useState([]);
@@ -18,14 +16,10 @@ function App() {
   const [descTask, setDescTask] = useState("");
   const [nextId, setNextId] = useState(0);
   const [modal, setModal] = useState(false);
-  const [modalClean, setModalClean] = useState(false);
   const [search, setSearch] = useState("");
 
   function modalOpen(boolean) {
     setModal(boolean);
-  }
-  function modalCleanOpen(boolean) {
-    setModalClean(boolean);
   }
 
   function addNewTaskOnList() {
@@ -44,10 +38,6 @@ function App() {
 
   function deleteTaskOnList(taskID) {
     const task = listOfTask.filter((task) => task.id !== taskID);
-    setListOfTask(task);
-  }
-  function deleteAllTasksToggleOnList() {
-    const task = listOfTask.filter((task) => task.isCompleted == false);
     setListOfTask(task);
   }
 
@@ -97,7 +87,6 @@ function App() {
         modalOpen={modalOpen}
         valueSearch={search}
         setValueSearch={setSearch}
-        modalCleanOpen={modalCleanOpen}
       />
       <ListTask
         listOfTask={listOfTask}
@@ -115,12 +104,7 @@ function App() {
           setDescTask={setDescTask}
         />
       )}
-      {modalClean && (
-        <ModalClean
-          modalCleanOpen={modalCleanOpen}
-          deleteToggleTask={deleteAllTasksToggleOnList}
-        />
-      )}
+
       <div className="footer">
         <div className="task-menu">
           <svg
