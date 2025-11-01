@@ -29,7 +29,7 @@
 }
 
 .box-listTask {
-  margin: 10px;
+  margin: 10px 10px 16px 10px;
   max-height: 420px;
   span {
     font-weight: 500;
