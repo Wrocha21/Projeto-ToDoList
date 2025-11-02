@@ -1,0 +1,42 @@
+.container-searchAndPlus {
+  margin: 15px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box-addTask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  input {
+    width: 250px;
+    height: 42px;
+    color: white;
+    padding-left: 12px;
+    background: none;
+    border: 1px solid #cdcdcd;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  svg {
+    cursor: pointer;
+    &:hover {
+      fill: #979797;
+    }
+  }
+
+  #filterList {
+    position: absolute;
+    left: 224px;
+    top: 92px;
+  }
+}
+.icons-add {
+  display: flex;
+  gap: 14px;
+  img {
+    cursor: pointer;
+  }
+}

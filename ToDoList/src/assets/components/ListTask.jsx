@@ -7,7 +7,6 @@ import { CategoryTomorrow } from "./categories";
 function ListTask({ valueSearch, deleteTask, ...props }) {
   const [openModalDel, setOpenModalDel] = useState(false);
   const [idTask, setIdTask] = useState(0);
-
   function addCategoryInTask(item) {
     if (item === "today") {
       return <CategoryToday />;
@@ -32,16 +31,13 @@ function ListTask({ valueSearch, deleteTask, ...props }) {
             .map((item, index) => (
               <li
                 style={{
-                  border:
-                    item.isCompleted === true
-                      ? "1px solid #5CFF7C"
-                      : "1px solid white",
+                  border: item.isCompleted === true ? "1px solid #5CFF7C" : "",
                   textDecoration:
                     item.isCompleted === true ? "line-through" : "",
                 }}
                 key={`${index}-${item}`}
               >
-                <div className="box-verify">
+                <div className="box-CircleAndCheck">
                   <IconeDinamico
                     nome={item.isCompleted ? "checkCircle" : "circle"}
                     cor="white"
@@ -60,14 +56,17 @@ function ListTask({ valueSearch, deleteTask, ...props }) {
                   </div>
                 </div>
                 {addCategoryInTask(item.category)}
-                <IconeDinamico
-                  nome="trash"
-                  cor="white"
-                  onClick={() => {
-                    setIdTask(item.id);
-                    setOpenModalDel(true);
-                  }}
-                />
+                <div className="info-Task">
+                  <IconeDinamico
+                    nome="trash"
+                    cor="white"
+                    onClick={() => {
+                      setIdTask(item.id);
+                      setOpenModalDel(true);
+                    }}
+                  />
+                  <IconeDinamico nome="dots" cor="white" />
+                </div>
               </li>
             ))}
         </ul>

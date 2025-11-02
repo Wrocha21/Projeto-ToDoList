@@ -9,6 +9,8 @@ import NotePad from "/public/static/notepad.svg?react";
 import PlusCircle from "/public/static/plus-circle.svg?react";
 import Trash from "/public/static/trash.svg?react";
 import Filter from "/public/static/filter.svg?react";
+import Dots from "/public/static/dots-three.svg?react";
+import Verify from "/public/static/verify.svg?react";
 
 const Icones = {
   bell: Bell,
@@ -20,6 +22,8 @@ const Icones = {
   circuloAdd: PlusCircle,
   trash: Trash,
   filter: Filter,
+  dots: Dots,
+  verify: Verify,
 };
 
 const IconeDinamico = ({ nome, tamanho = 27, cor, ...rest }) => {

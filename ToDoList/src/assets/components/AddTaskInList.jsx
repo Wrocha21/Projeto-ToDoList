@@ -1,11 +1,23 @@
+import { useState } from "react";
 import IconeDinamico from "./IconComponent";
+import { ModalFilter } from "./modalFilter";
 
-function AddTaskInList(props) {
+function AddTaskInList({ countTask, ...props }) {
+  const [modalFilterList, setModalFilter] = useState(false);
+
+  function closeModalFilter() {
+    setModalFilter(false);
+  }
   return (
     <>
       <div className="container-searchAndPlus">
         <div className="box-addTask">
-          <IconeDinamico nome="filter" cor="white" id="filterList" />
+          <IconeDinamico
+            nome="filter"
+            cor="white"
+            id="filterList"
+            onClick={() => setModalFilter(true)}
+          />
           <input
             type="text"
             placeholder="Pesquise suas tarefas"
@@ -22,6 +34,9 @@ function AddTaskInList(props) {
           </div>
         </div>
       </div>
+      {modalFilterList && (
+        <ModalFilter totalTasks={countTask} closeModal={closeModalFilter} />
+      )}
     </>
   );
 }

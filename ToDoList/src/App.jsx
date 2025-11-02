@@ -10,6 +10,8 @@ import "../src/assets/css/ListTask.css";
 import "../src/assets/css/global.css";
 import "../src/assets/css/modal.css";
 import "../src/assets/css/modalDelTask.css";
+import "../src/assets/css/addTask.css";
+import "../src/assets/css/modalFilter.css";
 
 function App() {
   const [listOfTask, setListOfTask] = useState([]);
@@ -17,11 +19,20 @@ function App() {
   const [descTask, setDescTask] = useState("");
   const [nextId, setNextId] = useState(0);
   const [modal, setModal] = useState(false);
+  const [countTaskImcomplete, setCountTaskImcomplete] = useState(0);
+  const [countTaskComplete, setCountTaskComplete] = useState(0);
   const [search, setSearch] = useState("");
   const [categories, setCategory] = useState("");
 
   function modalOpen(boolean) {
     setModal(boolean);
+  }
+
+  function countTaskCompleted(taskIsCompleted) {
+    if (taskIsCompleted === true) {
+      setCountTaskComplete((prev) => prev + 1);
+      console.log(countTaskComplete);
+    }
   }
 
   function setCategories(categoryID) {
@@ -38,7 +49,9 @@ function App() {
     };
     setListOfTask((prev) => [...prev, task]);
     setNextId((prev) => prev + 1);
+    setCountTaskImcomplete((prev) => prev + 1);
     setNameTask("");
+    countTaskCompleted();
     setDescTask("");
     setModal(false);
   }
@@ -58,12 +71,13 @@ function App() {
     });
     setListOfTask(newTasks);
   }
+
   return (
     <>
       <div className="navbar">
         <div className="user-perfil">
           <img src={userPerfilImg} alt="" />
-          <span>Julia</span>
+          <span>Juliwwa</span>
         </div>
         <div className="icons-info">
           <div className="notify-box">
@@ -78,12 +92,14 @@ function App() {
         modalOpen={modalOpen}
         valueSearch={search}
         setValueSearch={setSearch}
+        countTask={countTaskImcomplete}
       />
       <ListTask
         listOfTask={listOfTask}
         toggleTask={toggleTaskOnList}
         deleteTask={deleteTaskOnList}
         valueSearch={search}
+        countTasksCompleted={countTaskCompleted}
       />
       {modal && (
         <Modal
