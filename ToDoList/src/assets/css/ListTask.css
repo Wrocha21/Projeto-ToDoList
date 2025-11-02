@@ -26,6 +26,12 @@
       fill: #979797;
     }
   }
+
+  #filterList {
+    position: absolute;
+    left: 224px;
+    top: 92px;
+  }
 }
 
 .box-listTask {

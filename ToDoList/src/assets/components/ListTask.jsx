@@ -1,11 +1,24 @@
-import svgCircle from "../../../public/static/circle.svg";
-import svgCheckCircle from "../../../public/static/check-circle.svg";
 import { ModalDelTask } from "./ModalDelTask";
 import { useState } from "react";
+import IconeDinamico from "./IconComponent";
+import { CategoryToday } from "./categories";
+import { CategoryTomorrow } from "./categories";
 
 function ListTask({ valueSearch, deleteTask, ...props }) {
   const [openModalDel, setOpenModalDel] = useState(false);
   const [idTask, setIdTask] = useState(0);
+
+  function addCategoryInTask(item) {
+    if (item === "today") {
+      return <CategoryToday />;
+    }
+    if (item === "tomorrow") {
+      return <CategoryTomorrow />;
+    }
+    if (!item) {
+      return "";
+    }
+  }
 
   return (
     <>
@@ -29,13 +42,14 @@ function ListTask({ valueSearch, deleteTask, ...props }) {
                 key={`${index}-${item}`}
               >
                 <div className="box-verify">
-                  <img
+                  <IconeDinamico
+                    nome={item.isCompleted ? "checkCircle" : "circle"}
+                    cor="white"
+                    tamanho={28}
                     onClick={() => {
                       props.toggleTask(item.id);
                     }}
-                    src={item.isCompleted ? svgCheckCircle : svgCircle}
-                    width={26}
-                    alt=""
+                    style={{ margin: "0px 10px 0px 10px" }}
                   />
                   <div
                     className="title-task"
@@ -45,22 +59,15 @@ function ListTask({ valueSearch, deleteTask, ...props }) {
                     <div className="desc">{item.desc}</div>
                   </div>
                 </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="26"
-                  height="26"
-                  fill="#FFFFFF"
-                  style={{
-                    fill: item.isCompleted === true ? "grey" : "",
-                  }}
+                {addCategoryInTask(item.category)}
+                <IconeDinamico
+                  nome="trash"
+                  cor="white"
                   onClick={() => {
                     setIdTask(item.id);
                     setOpenModalDel(true);
                   }}
-                  viewBox="0 0 256 256"
-                >
-                  <path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"></path>
-                </svg>
+                />
               </li>
             ))}
         </ul>
